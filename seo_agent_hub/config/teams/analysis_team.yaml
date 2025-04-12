@@ -1,0 +1,26 @@
+# Configuration for the Analysis Team
+name: analysis_team
+description: "Team of agents responsible for analyzing collected data and generating insights."
+
+# Agents included in this team
+# Add all relevant analysis agent names here as they are implemented
+agents:
+  - keyword_analysis_agent     # Analyzes keywords from all sources
+  - competitor_analysis_agent  # Analyzes competitor data
+  - content_optimization_agent # Generates content recommendations
+  # - performance_analysis_agent # Add when implemented (analyzes GA/SC/MC performance)
+  # - market_positioning_agent # Add when implemented (analyzes pricing, reviews, social)
+
+# Memory configuration for this team
+# Using shared memory allows analysis agents to access data collected by the
+# data_collection_team and potentially results from other analysis agents.
+memory: shared
+
+# Optional: Define team-specific instructions or goals
+# instructions: |
+#   Your goal is to analyze all data present in the shared memory.
+#   Generate comprehensive insights covering keywords, competitors, content, performance, and market positioning.
+#   Store your analysis results and recommendations back into shared memory using clear keys (e.g., 'keyword_analysis_results', 'competitor_recommendations').
+
+# Optional: Define team-level tools if needed
+# tools: []

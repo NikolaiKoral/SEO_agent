@@ -1,0 +1,32 @@
+# A2A Framework
+google-a2a
+
+# Google APIs
+google-api-python-client
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-cloud-bigquery
+
+# SEMrush API (if needed)
+semrush-api-client
+
+# Google Trends
+pytrends
+
+# Search Console
+searchconsole
+
+# Web scraping/analysis
+requests
+beautifulsoup4
+
+# MCP client (for Firecrawl)
+mcp-client
+
+# Data processing
+pandas
+numpy
+
+# Environment management
+python-dotenv

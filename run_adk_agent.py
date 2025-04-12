@@ -10,7 +10,7 @@ def run_agent_sync():
 
     user_id = "local-user"
     session_id = "local-session"
-    brand_name = "Sage"
+    brand_name = "Royal Copenhagen"
 
     # Create a new session using the session service
     session = runner.session_service.create_session(

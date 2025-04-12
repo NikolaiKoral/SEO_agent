@@ -1,0 +1,31 @@
+# Configuration for the Data Collection Team
+name: data_collection_team
+description: "Team of agents responsible for collecting data from various external sources."
+
+# Agents included in this team
+# Add all relevant data collection agent names here as they are implemented
+agents:
+  - ga_agent             # Collects Google Analytics data
+  - search_console_agent # Collects Google Search Console data
+  - merchant_center_agent# Collects Google Merchant Center data
+  - semrush_agent        # Collects SEMrush data
+  - google_trends_agent  # Collects Google Trends data
+  - firecrawl_agent      # Collects web data via Firecrawl
+  # - amazon_product_agent # Add when implemented
+  # - social_listening_agent # Add when implemented
+  # - review_analytics_agent # Add when implemented
+  # - price_intelligence_agent # Add when implemented
+
+# Memory configuration for this team
+# Using shared memory allows agents within the team (and potentially across teams via the orchestrator)
+# to access data collected by others.
+memory: shared 
+
+# Optional: Define team-specific instructions or goals
+# instructions: |
+#   Your goal is to comprehensively collect data for the given product from all available sources.
+#   Store your findings in the shared memory using keys that identify the source (e.g., 'ga_data', 'search_console_data').
+#   If a source is unavailable or returns an error, note this in the memory and proceed.
+
+# Optional: Define team-level tools if needed, though tools are usually associated with agents
+# tools: []

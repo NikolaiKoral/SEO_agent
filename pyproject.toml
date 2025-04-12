@@ -20,7 +20,19 @@ dependencies = [
     "absl-py (>=2.2.2,<3.0.0)",
     "google-cloud-aiplatform[agent-engines] @ git+https://github.com/googleapis/python-aiplatform.git@copybara_738852226",
     "pytest (>=8.3.5,<9.0.0)",
-    "pillow (>=11.1.0,<12.0.0)"
+    "pillow (>=11.1.0,<12.0.0)",
+    "a2a (>=0.44,<0.45)",
+    "google-api-python-client (>=2.166.0,<3.0.0)",
+    "google-auth-oauthlib (>=1.2.1,<2.0.0)",
+    "google-auth-httplib2 (>=0.2.0,<0.3.0)",
+    "pytrends (>=4.9.2,<5.0.0)",
+    "searchconsole (>=0.0.4,<0.0.5)",
+    "requests (>=2.32.3,<3.0.0)",
+    "beautifulsoup4 (>=4.13.3,<5.0.0)",
+    "mcp-client (>=0.2.0,<0.3.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "numpy (>=2.2.4,<3.0.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)"
 ]
 
 [build-system]

@@ -1,6 +1,9 @@
 # Environment variables
 .env
 
+# Configuration files (contains secrets)
+config.json
+
 # Python cache files
 __pycache__/
 *.pyc

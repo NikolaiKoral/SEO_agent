@@ -47,10 +47,11 @@ class GAConnectorTool(BaseTool):
     """Tool for retrieving data from Google Analytics"""
 
     def __init__(self, config=None):
-        self.config = config or {}
-        self.property_id = self.config.get("GA_PROPERTY_ID") or os.environ.get("GA_PROPERTY_ID")
-        self.credentials_path = self.config.get("GA_CREDENTIALS_PATH") or os.environ.get("GA_CREDENTIALS_PATH")
-        self.credentials_json = self.config.get("GA_CREDENTIALS_JSON") or os.environ.get("GA_CREDENTIALS_JSON")
+        # Configuration now primarily relies on environment variables
+        # self.config = config or {} # config parameter is no longer used for these core settings
+        self.property_id = os.environ.get("GA_PROPERTY_ID")
+        self.credentials_path = os.environ.get("GA_CREDENTIALS_PATH")
+        self.credentials_json = os.environ.get("GA_CREDENTIALS_JSON")
         self.ga_client = self._initialize_client()
         if self.ga_client:
             logger.info("Google Analytics client initialized successfully.")

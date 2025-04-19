@@ -34,9 +34,10 @@ class MerchantCenterTool(BaseTool):
     """Tool for retrieving data from Google Merchant Center"""
 
     def __init__(self, config=None):
-        self.config = config or {}
-        self.credentials_path = self.config.get("MERCHANT_CENTER_CREDENTIALS") or os.environ.get("MERCHANT_CENTER_CREDENTIALS")
-        self.merchant_id = self.config.get("MERCHANT_CENTER_ID") or os.environ.get("MERCHANT_CENTER_ID")
+        # Configuration now primarily relies on environment variables
+        # self.config = config or {} # config parameter is no longer used for these core settings
+        self.credentials_path = os.environ.get("MERCHANT_CENTER_CREDENTIALS")
+        self.merchant_id = os.environ.get("MERCHANT_CENTER_ID")
         self.client = self._initialize_client()
         if self.client:
             logger.info("Merchant Center client initialized successfully.")

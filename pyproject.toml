@@ -9,7 +9,7 @@ license = "Apache License 2.0"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "google-adk (>=0.0.2)",
+    "google-adk (>=0.0.2,<0.1.0)", # Pinned upper bound for safety
     # "google-adk[eval] (>=0.0.2,<1.0.0)",
     "google-genai (>=1.5.0,<2.0.0)",
     "selenium (>=4.30.0,<5.0.0)",
@@ -18,7 +18,7 @@ dependencies = [
     "google-analytics-data (>=0.17.0,<1.0.0)",
     "google-auth (>=2.22.0,<3.0.0)",
     "absl-py (>=2.2.2,<3.0.0)",
-    "google-cloud-aiplatform[agent-engines] @ git+https://github.com/googleapis/python-aiplatform.git@copybara_738852226",
+    "google-cloud-aiplatform[agent-engines] @ git+https://github.com/googleapis/python-aiplatform.git@copybara_738852226", # NOTE: Pinned to specific commit, may become outdated/unavailable
     "pytest (>=8.3.5,<9.0.0)",
     "pillow (>=11.1.0,<12.0.0)",
     "a2a (>=0.44,<0.45)",
@@ -26,7 +26,7 @@ dependencies = [
     "google-auth-oauthlib (>=1.2.1,<2.0.0)",
     "google-auth-httplib2 (>=0.2.0,<0.3.0)",
     "pytrends (>=4.9.2,<5.0.0)",
-    "searchconsole (>=0.0.4,<0.0.5)",
+    "searchconsole (>=0.0.4,<0.0.5)", # NOTE: Ensure stability/maintenance
     "requests (>=2.32.3,<3.0.0)",
     "beautifulsoup4 (>=4.13.3,<5.0.0)",
     "mcp-client (>=0.2.0,<0.3.0)",

@@ -34,9 +34,10 @@ class SearchConsoleTool(BaseTool):
     """Tool for retrieving data from Google Search Console"""
 
     def __init__(self, config=None):
-        self.config = config or {}
-        self.credentials_path = self.config.get("SEARCH_CONSOLE_CREDENTIALS") or os.environ.get("SEARCH_CONSOLE_CREDENTIALS")
-        self.property_url = self.config.get("SEARCH_CONSOLE_PROPERTY") or os.environ.get("SEARCH_CONSOLE_PROPERTY")
+        # Configuration now primarily relies on environment variables
+        # self.config = config or {} # config parameter is no longer used for these core settings
+        self.credentials_path = os.environ.get("SEARCH_CONSOLE_CREDENTIALS")
+        self.property_url = os.environ.get("SEARCH_CONSOLE_PROPERTY")
         self.client = self._initialize_client()
         if self.client:
             logger.info("Search Console client initialized successfully.")

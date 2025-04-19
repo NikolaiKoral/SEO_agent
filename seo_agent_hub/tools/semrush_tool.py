@@ -26,11 +26,12 @@ class SEMrushTool(BaseTool):
     """Tool for retrieving data from SEMrush API"""
 
     def __init__(self, config=None):
-        self.config = config or {}
-        self.api_key = self.config.get("SEMRUSH_API_KEY") or os.environ.get("SEMRUSH_API_KEY")
-        self.base_url = "https://api.semrush.com" # Consider making base_url configurable if needed
+        # Configuration now primarily relies on environment variables
+        # self.config = config or {} # config parameter is no longer used for these core settings
+        self.api_key = os.environ.get("SEMRUSH_API_KEY")
+        self.base_url = os.environ.get("SEMRUSH_BASE_URL", "https://api.semrush.com") # Use env var or default
         if self.api_key:
-            logger.info("SEMrushTool initialized with API key.")
+            logger.info(f"SEMrushTool initialized with API key, using base URL: {self.base_url}")
         else:
             logger.error("SEMrush API key (SEMRUSH_API_KEY) not found in config or environment.")
 

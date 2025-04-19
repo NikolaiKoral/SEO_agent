@@ -40,10 +40,17 @@ class GoogleTrendsTool(BaseTool):
             self.pytrends = None
         else:
             try:
-                # Initialize pytrends client
-                # Consider adding parameters for hl (language) and tz (timezone) if needed
-                logger.debug("Initializing pytrends TrendReq client.")
-                self.pytrends = TrendReq(hl='en-US', tz=360) # Example: US English, Central Timezone offset
+                # Initialize pytrends client using environment variables or defaults
+                trends_hl = os.environ.get("GOOGLE_TRENDS_HL", 'en-US')
+                trends_tz_str = os.environ.get("GOOGLE_TRENDS_TZ", '360')
+                try:
+                    trends_tz = int(trends_tz_str)
+                except ValueError:
+                    logger.warning(f"Invalid GOOGLE_TRENDS_TZ value '{trends_tz_str}', using default 360.")
+                    trends_tz = 360
+
+                logger.debug(f"Initializing pytrends TrendReq client with hl='{trends_hl}', tz={trends_tz}.")
+                self.pytrends = TrendReq(hl=trends_hl, tz=trends_tz)
                 logger.info("Google Trends client (pytrends) initialized successfully.")
             except Exception as e:
                  logger.exception("Error initializing pytrends TrendReq client.")

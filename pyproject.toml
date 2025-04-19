@@ -32,7 +32,8 @@ dependencies = [
     "mcp-client (>=0.2.0,<0.3.0)",
     "pandas (>=2.2.3,<3.0.0)",
     "numpy (>=2.2.4,<3.0.0)",
-    "python-dotenv (>=1.1.0,<2.0.0)"
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)"
 ]
 
 [build-system]

@@ -1,0 +1,28 @@
+# SEO Knowledge and Guidelines for Agent Context
+
+# General Best Practices
+general_seo:
+  - Focus on user intent when selecting keywords.
+  - Ensure website content is high-quality, original, and relevant.
+  - Optimize page titles and meta descriptions with target keywords.
+  - Build high-quality backlinks from reputable sources.
+  - Ensure website is mobile-friendly and loads quickly.
+  - Use structured data markup where appropriate.
+
+# Project Specific Goals (Example)
+project_context:
+  target_audience: "Small business owners in the tech industry"
+  brand_voice: "Professional yet approachable"
+  key_competitors:
+    - "competitor-a.com"
+    - "competitor-b.net"
+  primary_product_focus: "Cloud-based accounting software"
+
+# Content Optimization Guidelines
+content_rules:
+  - Aim for a minimum word count of 800 words for blog posts.
+  - Include target keywords naturally in headings (H1, H2, H3) and body text.
+  - Use internal linking to relevant pages on the site.
+  - Optimize images with descriptive alt text.
+
+# Add more sections as needed (e.g., Technical SEO checklist, Link Building strategy)

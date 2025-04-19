@@ -1,5 +1,6 @@
 import json
 import os
+import yaml # Added import
 from typing import Dict, Any, List, Optional
 
 # A2A imports (assuming they are installed)
@@ -61,6 +62,27 @@ class SEOOrchestrator:
         
         # Initialize context builder
         self.context_builder = ContextBuilder()
+        
+        # Load SEO knowledge context
+        self.seo_knowledge = self._load_knowledge()
+
+    def _load_knowledge(self) -> Dict[str, Any]:
+        """Load SEO knowledge context from the YAML file."""
+        knowledge_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'seo_knowledge.yaml')
+        if not os.path.exists(knowledge_path):
+            print(f"Warning: Knowledge file not found: {knowledge_path}")
+            return {}
+        try:
+            with open(knowledge_path, 'r') as f:
+                knowledge = yaml.safe_load(f)
+                print(f"Successfully loaded SEO knowledge from {knowledge_path}")
+                return knowledge or {} # Return empty dict if file is empty
+        except yaml.YAMLError as e:
+            print(f"Error parsing knowledge file {knowledge_path}: {e}")
+            return {}
+        except Exception as e:
+            print(f"Error reading knowledge file {knowledge_path}: {e}")
+            return {}
 
     def _load_config(self, config_path):
         """Load configuration from file or environment variables"""
@@ -120,6 +142,11 @@ class SEOOrchestrator:
         
         # Store initial product data in memory
         self.memory.add("initial_product_data", product_data)
+        
+        # Inject SEO knowledge context into memory
+        if self.seo_knowledge:
+            self.memory.add("seo_knowledge_context", self.seo_knowledge)
+            print("Injected SEO knowledge context into shared memory.")
         
         # Step 1: Run Data Collection Team
         if self.data_collection_team:
